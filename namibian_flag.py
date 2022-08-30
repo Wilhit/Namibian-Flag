@@ -1,0 +1,148 @@
+import turtle
+
+t = turtle.Turtle()
+
+def rectangle(color):
+    t.begin_fill()
+    t.fillcolor(color)
+    for i in range(2):
+        t.forward(400)
+        t.right(90)
+        t.forward(300)
+        t.right(90)
+    t.end_fill()
+
+def top_strip(color):
+    t.begin_fill()
+    t.fillcolor(color)
+    t.pencolor("white")
+    t.forward(416)
+    t.pencolor("black")
+    t.setheading(0)
+    t.forward(20)
+    t.right(143)
+    t.pencolor("white")
+    t.forward(441)
+    t.pencolor("black")
+    t.end_fill()
+
+def mid_strip(color):
+    t.begin_fill()
+    t.fillcolor(color)
+    t.pencolor("white")
+    t.forward(441)
+    t.pencolor("black")
+    t.setheading(0)
+    t.pensize(4)
+    t.forward(49)
+    t.right(90)
+    t.forward(50)
+    t.right(53)
+    t.pencolor("white")
+    t.pensize(1)
+    t.forward(416)
+    t.pencolor("black")
+    t.pensize(4)
+    t.setheading(180)
+    t.forward(68)
+    t.right(90)
+    t.forward(37)
+    t.end_fill()
+
+def bottom_strip(color):
+    t.begin_fill()
+    t.fillcolor(color)
+    t.pensize(1)
+    t.pencolor("white")
+    t.forward(416)
+    t.pensize(4)
+    t.pencolor("black")
+    t.setheading(-90)
+    t.forward(20)
+    t.right(53)
+    t.pensize(1)
+    t.forward(382)
+    t.setheading(180)
+    t.pensize(4)
+    t.forward(25)
+    t.end_fill()
+    
+def bottom_triangle(color):
+    t.begin_fill()
+    t.fillcolor(color)
+    t.pencolor("white")
+    t.pensize(1)
+    t.forward(382)
+    t.pensize(4)
+    t.pencolor("black")
+    t.setheading(-90)
+    t.forward(230)
+    t.right(90)
+    t.forward(300)
+    t.end_fill()
+
+
+turtle.screensize(1100, 1100)
+turtle.title("National Flag")
+t.up()
+t.pensize(4)
+t.goto(0,-300)
+t.down()
+t.goto(0,400)
+rectangle("navy")
+t.pensize(1)
+t.right(90)
+t.forward(250)
+t.left(127)
+top_strip("white")
+t.setheading(-270)
+t.forward(20)
+t.setheading(-90)
+t.forward(20)
+t.left(127)
+mid_strip("red")
+t.setheading(-90)
+t.forward(37)
+t.left(90)
+t.forward(68)
+t.left(37)
+
+bottom_strip("white")
+
+t.setheading(0)
+t.forward(25)
+t.left(37)
+
+bottom_triangle("lime green")
+
+t.penup()
+t.right(90)
+t.forward(250)
+t.left(90)
+t.forward(50)
+t.setheading(0)
+t.pendown()
+t.pensize(1)
+
+t.color("yellow")
+t.begin_fill()
+sides = 1
+while sides < 14:
+    t.forward(80)
+    t.right(150)
+    sides += 1
+    if abs(t.pos()) < 1:
+        break
+t.end_fill()
+##t.done()
+
+
+t.forward(22)
+t.pensize(4)
+t.pencolor("navy")
+t.setheading(90)
+t.circle(20)
+
+t.penup()
+t.setheading(-90)
+t.forward(300)
